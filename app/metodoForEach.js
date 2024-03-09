@@ -1,5 +1,6 @@
 function exibirLivros(livros){
     const sectionLivros = document.getElementById('livros')
+    sectionLivros.innerHTML = ''
 
     livros.forEach(livro => {
         sectionLivros.append(criarLivro(livro))
@@ -8,7 +9,7 @@ function exibirLivros(livros){
 
 function criarLivro(livro){
     const divLivro  = document.createElement('div')
-    divLivro.classList.add('livro')
+    divLivro.classList.add('sectionLivros')
 
     const img = document.createElement('img')
     img.classList.add('livro__imagens')
