@@ -8,11 +8,13 @@ function exibirLivros(livros){
 }
 
 function criarLivro(livro){
+    let disponibilidade = verificarDisponibilidade(livro)
+
     const divLivro  = document.createElement('div')
     divLivro.classList.add('sectionLivros')
 
     const img = document.createElement('img')
-    img.classList.add('livro__imagens')
+    img.classList.add(disponibilidade)
     img.setAttribute('src',livro.imagem)
     img.setAttribute('alt',livro.alt)
 
@@ -46,4 +48,8 @@ function criarLivro(livro){
     divLivro.append(categorias)
     
     return divLivro
+}
+
+function verificarDisponibilidade(livro){
+    return livro.quantidade > 0 ? 'livro__imagens' : 'indisponivel'
 }

@@ -1,4 +1,5 @@
 const botoes = document.querySelectorAll('.btn')
+const btnLivrosDisponiveis = document.getElementById('btnLivrosDisponiveis')
 
 botoes.forEach(botao => {
     botao.addEventListener('click',(evento) => {
@@ -7,9 +8,16 @@ botoes.forEach(botao => {
     })
 });
 
+
 function filtrarLivros(filtro){
-    console.log(filtro)
     let livrosFiltrados = livros.filter( livro => livro.categoria ==  filtro)
-    console.table(livrosFiltrados)
+    exibirLivros(livrosFiltrados)
+}
+
+
+btnLivrosDisponiveis.addEventListener('click',filtrarLivrosDisponiveis)
+
+function filtrarLivrosDisponiveis(){
+    let livrosFiltrados = livros.filter( livro => livro.quantidade > 0)
     exibirLivros(livrosFiltrados)
 }
