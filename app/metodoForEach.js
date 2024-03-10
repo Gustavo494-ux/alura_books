@@ -1,5 +1,7 @@
+
+
 function exibirLivros(livros){
-    const sectionLivros = document.getElementById('livros')
+    const sectionLivros = document.getElementById('livros')    
     sectionLivros.innerHTML = ''
 
     livros.forEach(livro => {
